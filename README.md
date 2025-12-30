@@ -73,4 +73,5 @@ All hashes were generated using `sha256sum` to ensure integrity during upload an
   url       = {https://doi.org/10.5281/zenodo.18099710}## Version History
 - **v1.1 (2025-12-30)** — UTF-8 corrected release (current)
 - **v1.0 (2025-12-28)** — initial release with binary/RTF files
+- Sosna, L. (2025). SPARC Compactness N = 123: Canonical Dataset (v1.1). Zenodo. https://doi.org/10.5281/zenodo.18100150
 }
