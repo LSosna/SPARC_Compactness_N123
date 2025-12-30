@@ -70,5 +70,7 @@ All hashes were generated using `sha256sum` to ensure integrity during upload an
   year      = {2025},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.18099710},
-  url       = {https://doi.org/10.5281/zenodo.18099710}
+  url       = {https://doi.org/10.5281/zenodo.18099710}## Version History
+- **v1.1 (2025-12-30)** — UTF-8 corrected release (current)
+- **v1.0 (2025-12-28)** — initial release with binary/RTF files
 }
