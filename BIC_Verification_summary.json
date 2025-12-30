@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "description": "Bayesian Model Comparison: Standard RAR vs. Global Compactness Scaling",
+    "date": "2025-12-30",
+    "methodology": "Maximum Likelihood Estimation (Nelder-Mead optimization)"
+  },
+  "definitions": {
+    "BIC_formula": "BIC = chi2 + k * ln(n)",
+    "chi2_formula": "sum( ((V_obs - V_model) / sigma_obs)^2 )",
+    "n_points": "Total number of radius-level velocity measurements",
+    "k_params": "Number of free parameters in the model"
+  },
+  "data_sample": {
+    "N_galaxies": 123,
+    "n_radius_points": 2725,
+    "quality_cuts": "Q <= 3, 30 deg < Inc < 80 deg"
+  },
+  "models": {
+    "M0_RAR": {
+      "name": "Radial Acceleration Relation (Standard)",
+      "formula": "g_obs = g_bar / (1 - exp(-sqrt(g_bar/a0)))",
+      "free_parameters": ["a0"],
+      "k": 1,
+      "results": {
+        "a0_best_fit": 4.24e-11,
+        "units": "m/s^2",
+        "chi2": 144165.5,
+        "BIC": 144173.4
+      }
+    },
+    "M1_Lambda": {
+      "name": "Global Compactness Scaling",
+      "formula": "V_mod = V_bar * sqrt( A * (lambda/median_lambda)^gamma )",
+      "free_parameters": ["A", "gamma"],
+      "k": 2,
+      "results": {
+        "A_best_fit": 1.12,
+        "gamma_best_fit": -0.0004,
+        "note": "Gamma ~ 0 implies no statistical dependence on lambda",
+        "chi2": 407810.6,
+        "BIC": 407826.4
+      }
+    }
+  },
+  "conclusion": {
+    "delta_BIC": 263653.0,
+    "verdict": "Positive delta_BIC >> 10 strongly favors the Standard RAR.",
+    "interpretation": "Global compactness does not replace local acceleration as the driver of dynamics."
+  },
+  "model_comparison_summary": {
+    "RAR_preferred": true,
+    "RAR_BIC": 144173.4,
+    "Lambda_BIC": 407826.4,
+    "delta_BIC": 263653.0,
+    "n_points": 2725,
+    "parameters": {
+      "k_RAR": 1,
+      "k_Lambda": 2,
+      "gamma_hat": -0.0004
+    },
+    "interpretation": "RAR model overwhelmingly favored (ΔBIC ≫ 10)."
+  },
+  "provenance": {
+    "script": "generate_canonical.py",
+    "dataset": "SPARC_Canonical123.csv",
+    "constants": {
+      "G": "6.67430e-11 m^3 kg^-1 s^-2",
+      "M_sun": "1.98847e30 kg",
+      "kpc": "3.085677581e19 m"
+    },
+    "random_seed": 42,
+    "sigma_floor": "2 km/s",
+    "software_environment": {
+      "python": "3.12",
+      "libraries": {
+        "numpy": "1.26.4",
+        "pandas": "2.2.2",
+        "scipy": "1.14.0",
+        "matplotlib": "3.8.4"
+      }
+    }
+  }
+}
