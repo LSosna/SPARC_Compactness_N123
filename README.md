@@ -1,6 +1,6 @@
 # SPARC Compactness Canonical Analysis (v3.0)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18100150.svg)](https://doi.org/10.5281/zenodo.18100150)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 Canonical SPARC Compactness dataset (N = 123 galaxies), providing the gravitational
 compactness scaling λ ≡ GM_bar / (R_eff c²), with power-law slope s = 0.742 ± 0.020.
@@ -40,3 +40,13 @@ To rebuild the canonical archive:
 
 ```bash
 !python SPARC_canonical_rebuild_v3.0.py
+
+### 🔢 Canonical Results Summary
+| Parameter | Value | Description |
+|------------|--------|-------------|
+| N | 123 | Canonical SPARC sample |
+| s | 0.742 ± 0.020 | Compactness slope |
+| α_direct | 0.296 ± 0.020 | Direct R–M fit |
+| α_inferred | 0.258 | From 1 − s |
+| η_primary | 0.22–0.23 | Baryon retention scaling |
+| ΔBIC | 2.6×10⁵ | RAR strongly favored |
