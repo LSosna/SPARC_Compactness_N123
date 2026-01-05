@@ -1,77 +1,167 @@
-# SPARC Gravitational Compactness Project
-**Version:** 2.1 (Final Submission Release)
-**Date:** December 2025
+# SPARC Gravitational Compactness: Data & Code Archive
 
-# SPARC Compactness Canonical Dataset (N=123)
+**Version:** 2.3 (Final Submission)  
+**Date:** January 2026  
+**Paper Title:** *Gravitational Compactness of SPARC Galaxies: Structural Constraints and Decisive Falsification of Global Dynamical Scaling*
 
-[![DOI](https://zenodo.org/badge/1125461184.svg)](https://doi.org/10.5281/zenodo.18099710)
-
-Canonical N=123 SPARC compactness dataset, code, and verification files for the paper
-*“Gravitational Compactness of SPARC Disk Galaxies.”*
-
-- **GitHub Release:** [v1.0](https://github.com/LSosna/SPARC_Compactness_N123/releases/tag/v1.0)
-- **Permanent DOI:** [10.5281/zenodo.18099710](https://doi.org/10.5281/zenodo.18099710)
-- **License:** CC-BY 4.0 (for data) and MIT (for code)
+---
 
 ## 1. Overview
-This repository contains the complete data, code, and statistical evidence for the manuscript:
-**"Gravitational Compactness of SPARC Disk Galaxies: A Quantitative Benchmark for Angular Momentum Conservation"**
 
-The analysis establishes the "Disk Stability Floor" at $\lambda \approx 10^{-7.1}$ and performs a Bayesian Model Comparison (BIC) rejecting global-lambda dynamics in favor of the Radial Acceleration Relation (RAR).
+This repository contains the canonical dataset, analysis scripts, and statistical verification logs for the associated manuscript. The analysis establishes the structural "Disk Stability Floor" at λ ≈ 10⁻⁷·¹ and performs a Bayesian Model Comparison that **decisively falsifies** global-λ dynamics (ΔBIC ≈ 2.6 × 10⁵).
+
+### Key Results
+
+| Parameter | Value | Interpretation |
+|-----------|-------|----------------|
+| **ΔBIC** | +2.64 × 10⁵ | Decisive falsification of global-λ dynamics |
+| **Compactness Slope** | s = 0.742 ± 0.020 | λ ∝ M^0.74 scaling |
+| **Intrinsic Scatter** | σ = 0.22 dex | Cosmic variance (not observational noise) |
+| **Baryon Retention** | η ≈ 0.23 | f_b ∝ M^0.23 constraint |
+| **Median λ** | 7.2 × 10⁻⁸ | Characteristic disk compactness |
 
 ---
 
 ## 2. File Manifest
 
-### Primary Data
-* **`SPARC_Canonical123.csv`**: The "Single Source of Truth" dataset. Contains properties for the strict sample of **N=123** galaxies (Quality ≤ 3, 30° < i < 80°).
-    * _Columns:_ `Name`, `Dist_Mpc`, `M_bar` (Baryonic Mass), `R_eff` (Effective Radius), `lambda` (Compactness), `log_lambda`, `slope_s` inputs.
+### A. Primary Data
 
-### Statistical Verification
-* **`canonical_FINAL_CORRECTED.json`**: Machine-readable summary of all derived values (Slopes $s$ and $\alpha$, Scatter $\sigma$, $\Delta$BIC). All manuscript numbers are pulled from here.
-* **`BIC_Verification_summary.json`**: Detailed output of the Bayesian Information Criterion test, comparing the Standard RAR vs. Global $\lambda$-Scaling models.
+| File | Description |
+|------|-------------|
+| `SPARC_Canonical123.csv` | Canonical N=123 dataset with all galaxy properties |
+| `canonical_FINAL_CORRECTED.json` | Machine-readable summary of fit parameters |
 
-### Reproducibility Code
-* **`“sparc_canonical_final.py`**: A standalone Python script.
-    * **Function:** Ingests raw SPARC data, applies cuts, performs ODR fitting, and generates the figures.
-    * **Usage:** Can be run locally or in Google Colab.
+### B. Analysis Code
+
+| File | Description |
+|------|-------------|
+| `SPARC_canonical_rebuild_v2.3.py` | Main analysis script (ODR fits, BIC calculation, figures) |
+
+### C. Verification Logs
+
+| File | Description |
+|------|-------------|
+| `BIC_Verification_summary.json` | Detailed BIC model comparison output |
+| `CHECKSUMS.txt` | SHA-256 hashes for file integrity |
 
 ---
 
-## 3. How to Reproduce Results
+## 3. Reproduction Instructions
 
 ### System Requirements
-* Python 3.8+
-* Libraries: `numpy`, `scipy`, `pandas`, `matplotlib`
+- Python 3.8+
+- Libraries: `numpy`, `pandas`, `scipy`, `matplotlib`
 
-### Instructions
-1. Place `generate_canonical.py` in the same folder as the raw SPARC data (or point it to the VizieR URL).
-2. Run the script:
+### Steps
+
+1. **Clone or download** this repository
+2. **Place data files** in the working directory
+3. **Run the analysis:**
    ```bash
-   python generate_canonical.py
+   python SPARC_canonical_rebuild_v2.3.py
+   ```
+4. **Outputs generated:**
+   - Figure 1: Compactness vs Baryonic Mass
+   - Figure 2: Effective Radius vs Baryonic Mass
+   - Figure 3: Distribution of log₁₀λ
+   - Figure 4: BIC Model Comparison
+   - Console verification of all canonical values
 
-## 4. Verification and Checksums
-Each major file has been validated against its canonical results.
+---
 
-| File | SHA-256 | Notes |
-|------|----------|-------|
-| SPARC_Canonical123.csv | [insert hash] | N=123 canonical dataset |
-| canonical_FINAL_CORRECTED.json | [insert hash] | Machine-readable summary |
-| BIC_Verification_summary.json | [insert hash] | Model comparison output |
-| generate_canonical.py | [insert hash] | Reproducibility script |
-| SPARC_Manuscript_N123_FINAL.docx | [insert hash] | Published manuscript text |
+## 4. Canonical Values
 
-All hashes were generated using `sha256sum` to ensure integrity during upload and review.
+### Structural Parameters
+```
+N = 123 galaxies
+Median λ = 7.2 × 10⁻⁸ (log₁₀λ = -7.14)
+95% CI: [5.6, 9.9] × 10⁻⁸
 
-## 5. Citation
-@dataset{sosna_sparc_2025,
-  author    = {Sosna, Lukas},
-  title     = {SPARC Gravitational Compactness Dataset (N=123)},
-  year      = {2025},
-  publisher = {Zenodo},
-  doi       = {10.5281/zenodo.18099710},
-  url       = {https://doi.org/10.5281/zenodo.18099710}## Version History
-- **v1.1 (2025-12-30)** — UTF-8 corrected release (current)
-- **v1.0 (2025-12-28)** — initial release with binary/RTF files
-- Sosna, L. (2025). SPARC Compactness N = 123: Canonical Dataset (v1.1). Zenodo. https://doi.org/10.5281/zenodo.18100150
+Compactness slope: s = 0.742 ± 0.020
+Direct size slope: α = 0.296 ± 0.020
+Inferred size slope: α_infer = 0.258 ± 0.020
+
+Intrinsic scatter: σ = 0.22 dex
+  - Inclination correlation: r = 0.055, p = 0.55
+  - Gas fraction correlation: r = 0.027, p = 0.77
+```
+
+### Dynamical Falsification
+```
+n = 2,725 rotation-curve points
+σ_floor = 2 km/s
+
+BIC(RAR) = 1.44 × 10⁵
+BIC(λ) = 4.08 × 10⁵
+ΔBIC = +2.64 × 10⁵ (RAR decisively preferred)
+
+Best-fit γ ≈ -4 × 10⁻⁴ ≈ 0 (no λ dependence)
+```
+
+### Baryon Retention Constraint
+```
+From compactness: η ≈ 0.23 (primary)
+From direct fit: η ≈ 0.11 (consistency check)
+Adopted range: η ≈ 0.1–0.3
+```
+
+---
+
+## 5. Sample Selection Criteria
+
+Starting from SPARC (175 galaxies):
+1. Quality cut: Q ≤ 3
+2. Inclination cut: 30° < i < 80°
+3. Valid R_eff and M_HI
+4. Exclude 7 systems with photometric anomalies
+
+**Final sample: N = 123 galaxies**
+
+---
+
+## 6. Physical Constants (CODATA-2018)
+
+```
+G = 6.67430 × 10⁻¹¹ m³ kg⁻¹ s⁻²
+c = 2.99792458 × 10⁸ m s⁻¹
+M_sun = 1.98847 × 10³⁰ kg
+kpc = 3.0857 × 10¹⁹ m
+Υ_3.6 = 0.5 M_sun/L_sun
+```
+
+---
+
+## 7. Citation
+
+```bibtex
+@article{sosna2026sparc,
+  author  = {Sosna, Lukas},
+  title   = {Gravitational Compactness of {SPARC} Galaxies: 
+             Structural Constraints and Decisive Falsification 
+             of Global Dynamical Scaling},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  year    = {2026},
+  note    = {Submitted}
 }
+
+@dataset{sosna2026data,
+  author    = {Sosna, Lukas},
+  title     = {{SPARC} Gravitational Compactness Dataset (N=123)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.18099710}
+}
+```
+
+---
+
+## 8. License
+
+- **Data:** CC-BY 4.0
+- **Code:** MIT License
+
+---
+
+## 9. Contact
+
+For questions about this dataset or analysis, please open an issue on the GitHub repository or contact the author.
