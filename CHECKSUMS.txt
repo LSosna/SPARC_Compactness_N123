@@ -1,2 +1,0 @@
-2fa3820f71377227fc4be68d31f61c3e4b53c5aa126844007ae8d423017c807a  canonical_FINAL_CORRECTED.json
-7ef12d57bea6b1a0e79b2535d1c8ea15bd3d249b9e3aebc5b75a145071162f19  BIC_Verification_summary.json
