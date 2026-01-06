@@ -1,52 +1,44 @@
-# SPARC Compactness Canonical Analysis (v3.0)
+# SPARC Compactness Canonical Dataset (v3.1)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18100150.svg)](https://doi.org/10.5281/zenodo.18100150)
 
-Canonical SPARC Compactness dataset (N = 123 galaxies), providing the gravitational
-compactness scaling λ ≡ GM_bar / (R_eff c²), with power-law slope s = 0.742 ± 0.020.
+Canonical N=123 SPARC compactness dataset and reproducibility package accompanying:
+
+**Sosna (2026)** — *“Gravitational Compactness of SPARC Galaxies: A Three-Parameter Benchmark for Baryon Retention and Decisive Falsification of Global Dynamical Scaling.”*
 
 ---
 
 ### 📊 Key Results
+
 | Parameter | Value | Description |
 |------------|--------|-------------|
-| N | 123 | Canonical sample size |
+| N | 123 | Canonical SPARC galaxy sample |
 | s | 0.742 ± 0.020 | Compactness slope |
 | α_direct | 0.296 ± 0.020 | Direct R–M fit |
 | α_inferred | 0.258 | From 1 − s |
-| η_primary | 0.22–0.23 | Baryon retention scaling |
-| σ | 0.21 dex | Intrinsic scatter |
-| ΔBIC | 2.6×10⁵ | RAR strongly favored over λ-model |
+| η_primary | 0.10–0.23 | Baryon retention scaling zone |
+| σ | 0.21 dex | Intrinsic scatter (ΛCDM variance ceiling) |
+| ΔBIC | +2.6×10⁵ | RAR strongly favored over λ-model |
 
 ---
 
-### 📁 File Manifest
+### 📁 Included Files
+
 | File | Description |
 |------|--------------|
 | `SPARC_Canonical123.csv` | Canonical dataset (N=123) |
-| `canonical_FINAL_CORRECTED.json` | Derived canonical quantities |
-| `BIC_Verification_summary.json` | Bayesian comparison summary |
-| `SPARC_canonical_rebuild_v3.0.py` | Reproducible rebuild script |
-| `Sparc_canonical_final.py` | Legacy analysis script |
-| `CHECKSUMS.txt` | SHA256 verification file |
-| `SPARC_Manuscript_FINAL_v3.md` | Markdown manuscript |
-| `SPARC_Manuscript_FINAL_FORMATTED.docx` | Submission-ready Word file |
-| `Figures/` | Publication figures 1–4 |
+| `canonical_FINAL_v3.1.json` | Canonical compactness and scaling parameters |
+| `BIC_Verification_summary.json` | Bayesian model comparison results |
+| `SPARC_canonical_rebuild_v3.1.py` | Reproducible rebuild script |
+| `CHECKSUMS.txt` | Integrity verification manifest |
+| `Empirical_Compactness_Scaling_in_Disk_Galaxies_SUBMISSION_FINAL.pdf` | Final manuscript |
+| `README.md` | Documentation and summary (this file) |
 
 ---
 
 ### 🔁 Reproduction
-To rebuild the canonical archive:
+
+To rebuild the canonical compactness dataset locally:
 
 ```bash
-!python SPARC_canonical_rebuild_v3.0.py
-
-### 🔢 Canonical Results Summary
-| Parameter | Value | Description |
-|------------|--------|-------------|
-| N | 123 | Canonical SPARC sample |
-| s | 0.742 ± 0.020 | Compactness slope |
-| α_direct | 0.296 ± 0.020 | Direct R–M fit |
-| α_inferred | 0.258 | From 1 − s |
-| η_primary | 0.22–0.23 | Baryon retention scaling |
-| ΔBIC | 2.6×10⁵ | RAR strongly favored |
+python SPARC_canonical_rebuild_v3.1.py
