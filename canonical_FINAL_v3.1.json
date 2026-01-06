@@ -1,0 +1,38 @@
+{
+  "N": 123,
+  "median_lambda": 7.317802206234481e-08,
+  "log10_median_lambda": -7.14,
+  "slope_s": 0.742,
+  "slope_s_err": 0.02,
+  "alpha_direct": 0.296,
+  "alpha_direct_err": 0.02,
+  "alpha_inferred": 0.258,
+  "eta_target_zone": [
+    0.11,
+    0.22
+  ],
+  "eta_from_compactness": 0.22,
+  "eta_from_direct": 0.11,
+  "scatter_dex": 0.21,
+  "r_inclination": 0.055,
+  "p_inclination": 0.54,
+  "r_gas_fraction": 0.025,
+  "p_gas_fraction": 0.78,
+  "\u0394BIC": 263653,
+  "BIC_inputs": {
+    "BIC_RAR": 144173.4,
+    "BIC_lambda": 407826.4,
+    "n": 2725,
+    "k_RAR": 1,
+    "k_lambda": 2
+  },
+  "mass_range_Msun": [
+    49060000.0,
+    268868290000.0
+  ],
+  "lambda_range": [
+    2.114895847644599e-09,
+    1.6799946199711416e-06
+  ],
+  "code_version": "SPARC_Compactness_v3.1"
+}
