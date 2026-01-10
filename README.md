@@ -1,6 +1,6 @@
-# SPARC Compactness Canonical Dataset (v3.1)
+# SPARC Compactness Canonical Dataset (v3.2)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18100150.svg)](https://doi.org/10.5281/zenodo.18100150)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18203448.svg)](https://doi.org/10.5281/zenodo.18203448) 
 
 Canonical N=123 SPARC compactness dataset and reproducibility package accompanying:
 
